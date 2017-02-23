@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script
+	  src="https://code.jquery.com/jquery-3.1.1.min.js"
+	  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	  crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+	
+<!-- ASK TA'S ABOUT LINKING FILE <script src="game.js"></script> -->
+
+
+    <title>Ancient Aliens Trivia</title>
+  </head>
+	<body>
+
+		<center><div id="container">
+        
+        <h1>Ancient Aliens Trivia</h1>
+        <hr>
+        <p id ="one"><center>You have 30 seconds to answer the questions. Good Luck!</center></p>
+        <div id="display"><h2></h2></div>
+        <div id="buttons">
+            <button id="start">Start</button>
+      
+
+      </div>
+      </div>
+    </div></center>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+
+    $("#buttons").click(function(){
+
+
+    var timeLeft = 30;
+    var elem = document.getElementById('display');
+    var timerId = setInterval(countdown, 1000);
+
+
+    function countdown() {
+
+          if (timeLeft == 0) {
+            clearTimeout(timerId);
+            elem.innerHTML = 'Time Is Up';
+          
+          }
+
+           else {
+            elem.innerHTML = timeLeft + ' seconds remaining';
+            timeLeft--;
+          }
+        }
+   // });
+
+   //  $("#buttons").click(function(){
+
+
+   var html = "<br>" + "<h2>TRUE OR FALSE:</h2>" + "<br>" + "<p><strong>73% of scientists have confirmed that an Aliens built the Pyramids?</h3></strong></p>" + "<form><input type=radio value=True> True  <input type=radio value=False> False</form>" + "<br>" +
+
+        "<p><strong> The History Channel is 100% accurate?</strong></p>" + "<form><input type=radio value=True> True <input type=radio value=False> False</form>" + "<br>" +
+
+        "<p><strong>Mysterious elongated skulls have been discovered on Earth?</h3></strong>" + "<form><input type=radio value=True> True  <input type=radio value=False> False</form>" + "<br>" +
+
+        "<p><strong>By 2028, man will be able to travel to Mars within 2-3 weeks.</strong></p>" + "<form><input type=radio value=True> True  <input type=radio value=False> False</form>" +
+
+        "<br>" + "<p>End!</p>"
+
+
+    document.querySelector("#buttons").innerHTML = html;
+
+   
+
+ });
+        
+        // $("#buttons").click(function(){
+        // console.log("test");
+         
+        // var html = "<p><h1>Ancient Aliens Trivia</h1></p>"+ "<hr>"+
+        //   "<p>You have 30 seconds to answer the questions. Good Luck!</p>"+
+        // //   "<h2>00:30</h2>"
+            
+
+
+        // document.querySelector("#container").innerHTML = html;
+          
+
+
+        //   setTimeout(fiveSeconds, 1000 * 5);
+          
+        //   function fiveSeconds() {
+        //   $("#display").append("<h2>About 10 Seconds Left!</h2>");
+        //   console.log("10 seconds left");
+        // }
+
+
+         // "<p>Wins: " + wins + "</p>" +
+         //  "<p>Losses: " + losses + "</p>" +
+         //  "<p>Guesses Left: " + guessesLeft + "</p>"+
+         //  "<p>Guesses So Far: " +  "</p>"
+
+// });
+
+})
+
+    </script>
+ 
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+
+body {
+	background-image: url("../images/ancient-aliens.jpg");
+}
+
+#container {
+	width: 800px;
+	background-color: white;
+	opacity: 0.8;
+	height: 700px;
+	margin-top: 70px;
+	padding: 20px;
+}
+
+h1 {
+	font-family: 'Acme', sans-serif;
+	padding-top: 35px;
+
+}
+
+#buttons { /* Typography */ text-align: center;}
+
+button {
+
+  /* Box-model */
+  height: 50px;
+  width: 100px;
+
+}
+
+hr {
+	width: 350px;
+}
