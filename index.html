@@ -131,6 +131,52 @@
                   if (timeLeft == 0) {
                     clearTimeout(timerId);
                     elem.innerHTML = 'Time Is Up';
+
+                     $("#gameText").hide();
+                $("#questions").hide();
+                $("#display").hide();
+
+                if (button1.checked){
+                    $("#gameresults").html("Thanks for playing, your results are below: <br><br><strong>Question 1:</strong> Correct <br><br>");
+
+                     } else if (button2.checked) {
+                    $("#gameresults").html("Thanks for playing, your results are below: <br><br><strong>Question 1:</strong> Incorrect <br><br>");
+
+                }
+
+                   if (button3.checked){
+                    $("#gameresults2").html("<strong>Question 2:</strong> Incorrect<br><br>");
+
+                    } else if (button4.checked) {
+                    $("#gameresults2").html("<strong>Question 2:</strong> Correct<br><br>");
+
+                    } else if (button5.checked) {
+                    $("#gameresults2").html("<strong>Question 2:</strong> Incorrect<br><br>");
+
+                }
+
+                    if (button6.checked){
+                    $("#gameresults3").html("<strong>Question 3:</strong> Incorrect<br><br>");
+
+                    } else if (button7.checked) {
+                    $("#gameresults3").html("<strong>Question 3:</strong> Incorrect<br><br>");
+
+                    } else if (button8.checked) {
+                    $("#gameresults3").html("<strong>Question 3:</strong> Correct<br><br>");
+
+                }
+
+                    if (button9.checked){
+                    $("#gameresults4").html("<strong>Question 4:</strong> Correct<br><br>");
+
+                    } else if (button10.checked) {
+                    $("#gameresults4").html("<strong>Question 4:</strong> Incorrect<br><br>");
+
+                    } else if (button11.checked) {
+                    $("#gameresults4").html("<strong>Question 4:</strong> Incorrect<br><br>");
+
+                }
+
                   
                   }
 
