@@ -5,81 +5,135 @@
     <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script
-	  src="https://code.jquery.com/jquery-3.1.1.min.js"
-	  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-	  crossorigin="anonymous"></script>
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
-	
+    
 <!-- ASK TA'S ABOUT LINKING FILE <script src="game.js"></script> -->
 
 
     <title>Ancient Aliens Trivia</title>
   </head>
-	<body>
+    <body>
 
-		<center><div id="container">
+        <center><div id="container">
         
         <h1>Ancient Aliens Trivia</h1>
         <hr>
-        <p id ="one"><center>You have 30 seconds to answer the questions. Good Luck!</center></p>
-        <div id="display"><h2></h2></div>
-        <div id="buttons">
-            <button id="start">Start</button>
+
+        <div id = "gameText"><p id ="one"><center>You have 30 seconds to answer the questions. Good Luck!</center></p></div>
+        <h2><div id="display"><h2></h2></div></h2>
+        <div id = "newDiv"><input type= "button" id="start" value="Start"/></div>
+<!--             <button id="start">Start</button>
+ -->  <br>
+
+      <div id="questions">
+      <p><strong>73% of scientists have confirmed that an Aliens built the Pyramids?</strong></p>
+      <form id="formOne">
+      <input type="radio" name="tandf" value="true">True  
+      <input type="radio" name="tandf" value="false"> False
       
+      <br>
+      <br>
+
+      <p><strong>Which alien race is believed to have similar physical features and traits like humans?</strong></p>
+     
+      <input type="radio" name="aliens" value="greys"> The Greys  
+      <input type="radio" name="aliens" value="annunaki"> The Annunaki  
+      <input type="radio" name="aliens" value="reptillians"> The Reptillians 
+    
+      <br>
+      <br>
+
+
+      <p><strong>Which ancient civilization do many scientists consider the start of civilization?</strong></p>
+     
+      <input type="radio" name="race" value="atlanteans"> Alanteans
+      <input type="radio" name="race" value="egyptians"> Egyptians
+      <input type="radio" name="race" value="sumerians"> Sumerians
+
+      <br>
+      <br>
+
+      <p><strong>Which planet is speculated to have life millions of years ago?</strong></p>
+     
+      <input type="radio" name="planet" value="mars"> Mars  
+      <input type="radio" name="planet" value="pluto"> Pluto
+      <input type="radio" name="planet" value="mercury"> Mercury
+
+      <br>
+      <br>
+      <br>
+
+      <input type="submit" value="Submit">
+
+
+    </form> 
 
       </div>
-      </div>
+
+    </div>
+
+    
     </div></center>
 
 
     <script type="text/javascript">
 
         $(document).ready(function(){
+          $("#questions").hide();
+
+          $("#start").click(function(){
+            console.log("Hello");
+          $("#start").hide();
+           $("#questions").show();
+
+            $("#gameText").html("Let's Begin!");
+
+            var timeLeft = 30;
+            var elem = document.getElementById('display');
+            var timerId = setInterval(countdown, 1000);
+            var value = "tandf";
 
 
-    $("#buttons").click(function(){
+            function countdown() {
+
+                  if (timeLeft == 0) {
+                    clearTimeout(timerId);
+                    elem.innerHTML = 'Time Is Up';
+
+                    // if 
+                  
+                  }
+
+                 else {
+                  elem.innerHTML = timeLeft + ' seconds remaining';
+                  timeLeft--;
+                  }
+
+}
+              // $("#newDiv").append("<h3>TRUE OR FALSE:</h3><p>73% of scientists have confirmed that an Aliens built the Pyramids?</h3></p> <form><input type=radio value=True> True  <input type=radio value=False> False</form>");
+
+   //      }
+   // // });
+
+   // //  $("#buttons").click(function(){
 
 
-    var timeLeft = 30;
-    var elem = document.getElementById('display');
-    var timerId = setInterval(countdown, 1000);
+   // var html = "<br>" + "<h2>TRUE OR FALSE:</h2>" + "<br>" + "<p><strong>73% of scientists have confirmed that an Aliens built the Pyramids?</h3></strong></p>" + "<form><input type=radio value=True> True  <input type=radio value=False> False</form>" + "<br>" +
+
+   //      "<p><strong> The History Channel is 100% accurate?</strong></p>" + "<form><input type=radio value=True> True <input type=radio value=False> False</form>" + "<br>" +
+
+   //      "<p><strong>Mysterious elongated skulls have been discovered on Earth?</h3></strong>" + "<form><input type=radio value=True> True  <input type=radio value=False>" +
+        
+
+   //      "<br>" + "<p>End!</p>"
 
 
-    function countdown() {
-
-          if (timeLeft == 0) {
-            clearTimeout(timerId);
-            elem.innerHTML = 'Time Is Up';
-          
-          }
-
-           else {
-            elem.innerHTML = timeLeft + ' seconds remaining';
-            timeLeft--;
-          }
-        }
-   // });
-
-   //  $("#buttons").click(function(){
-
-
-   var html = "<br>" + "<h2>TRUE OR FALSE:</h2>" + "<br>" + "<p><strong>73% of scientists have confirmed that an Aliens built the Pyramids?</h3></strong></p>" + "<form><input type=radio value=True> True  <input type=radio value=False> False</form>" + "<br>" +
-
-        "<p><strong> The History Channel is 100% accurate?</strong></p>" + "<form><input type=radio value=True> True <input type=radio value=False> False</form>" + "<br>" +
-
-        "<p><strong>Mysterious elongated skulls have been discovered on Earth?</h3></strong>" + "<form><input type=radio value=True> True  <input type=radio value=False> False</form>" + "<br>" +
-
-        "<p><strong>By 2028, man will be able to travel to Mars within 2-3 weeks.</strong></p>" + "<form><input type=radio value=True> True  <input type=radio value=False> False</form>" +
-
-        "<br>" + "<p>End!</p>"
-
-
-    document.querySelector("#buttons").innerHTML = html;
+   //  document.querySelector("#buttons").innerHTML = html;
 
    
-
- });
-        
         // $("#buttons").click(function(){
         // console.log("test");
          
@@ -106,9 +160,10 @@
          //  "<p>Guesses Left: " + guessesLeft + "</p>"+
          //  "<p>Guesses So Far: " +  "</p>"
 
-// });
 
-})
+});
+
+});
 
     </script>
  
