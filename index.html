@@ -23,7 +23,15 @@
         <hr>
 
         <div id = "gameText"><p id ="one"><center>You have 30 seconds to answer the questions. Good Luck!</center></p></div>
+        
         <h2><div id="display"><h2></h2></div></h2>
+        
+        <span id="gameresults"></span>
+        <span id="gameresults2"></span>
+        <span id="gameresults3"></span>
+        <span id="gameresults4"></span>
+
+
         <div id = "newDiv"><input type= "button" id="start" value="Start"/></div>
 <!--             <button id="start">Start</button>
  -->  <br>
@@ -31,17 +39,17 @@
       <div id="questions">
       <p><strong>73% of scientists have confirmed that an Aliens built the Pyramids?</strong></p>
       <form id="formOne">
-      <input type="radio" name="tandf" value="true">True  
-      <input type="radio" name="tandf" value="false"> False
+      <input type="radio" name="tandf" value="true" id="button1">True  
+      <input type="radio" name="tandf" value="false" id="button2"> False
       
       <br>
       <br>
 
       <p><strong>Which alien race is believed to have similar physical features and traits like humans?</strong></p>
      
-      <input type="radio" name="aliens" value="greys"> The Greys  
-      <input type="radio" name="aliens" value="annunaki"> The Annunaki  
-      <input type="radio" name="aliens" value="reptillians"> The Reptillians 
+      <input type="radio" name="aliens" value="greys" id="button3"> The Greys  
+      <input type="radio" name="aliens" value="annunaki" id="button4"> The Annunaki  
+      <input type="radio" name="aliens" value="reptillians" id="button5"> The Reptillians 
     
       <br>
       <br>
@@ -49,27 +57,30 @@
 
       <p><strong>Which ancient civilization do many scientists consider the start of civilization?</strong></p>
      
-      <input type="radio" name="race" value="atlanteans"> Alanteans
-      <input type="radio" name="race" value="egyptians"> Egyptians
-      <input type="radio" name="race" value="sumerians"> Sumerians
+      <input type="radio" name="race" value="atlanteans" id="button6"> Alanteans
+      <input type="radio" name="race" value="egyptians" id="button7"> Egyptians
+      <input type="radio" name="race" value="sumerians" id="button8"> Sumerians
 
       <br>
       <br>
 
       <p><strong>Which planet is speculated to have life millions of years ago?</strong></p>
      
-      <input type="radio" name="planet" value="mars"> Mars  
-      <input type="radio" name="planet" value="pluto"> Pluto
-      <input type="radio" name="planet" value="mercury"> Mercury
+      <input type="radio" name="planet" value="mars" id="button9"> Mars  
+      <input type="radio" name="planet" value="pluto" id="button10"> Pluto
+      <input type="radio" name="planet" value="mercury" id="button11"> Mercury
 
       <br>
       <br>
       <br>
-
-      <input type="submit" value="Submit">
-
+    
+<!--       <input type="submit" value="Submit" id="submit">
+ -->
 
     </form> 
+
+    <button onclick="myFunction()" id ="submit">Submit</button>
+
 
       </div>
 
@@ -82,19 +93,37 @@
     <script type="text/javascript">
 
         $(document).ready(function(){
-          $("#questions").hide();
+            $("#questions").hide();
 
-          $("#start").click(function(){
+            $("#start").click (function(){
+
             console.log("Hello");
-          $("#start").hide();
-           $("#questions").show();
+
+            $("#start").hide();
+            
+            $("#questions").show();
 
             $("#gameText").html("Let's Begin!");
 
             var timeLeft = 30;
             var elem = document.getElementById('display');
             var timerId = setInterval(countdown, 1000);
-            var value = "tandf";
+            // var value = "tandf";
+
+            var button1 = document.getElementById("button1");
+            var button2 = document.getElementById("button2");
+
+            var button2 = document.getElementById("button3");
+            var button2 = document.getElementById("button4");
+            var button2 = document.getElementById("button5");
+
+            var button2 = document.getElementById("button6");
+            var button2 = document.getElementById("button7");
+            var button2 = document.getElementById("button8");
+
+            var button2 = document.getElementById("button9");
+            var button2 = document.getElementById("button10");
+            var button2 = document.getElementById("button11");
 
 
             function countdown() {
@@ -102,17 +131,67 @@
                   if (timeLeft == 0) {
                     clearTimeout(timerId);
                     elem.innerHTML = 'Time Is Up';
-
-                    // if 
                   
                   }
 
                  else {
                   elem.innerHTML = timeLeft + ' seconds remaining';
                   timeLeft--;
-                  }
+          
+                    }
+                
+            }
 
-}
+})
+             $("#submit").click (function(){
+          
+                $("#gameText").hide();
+                $("#questions").hide();
+                $("#display").hide();
+
+                if (button1.checked){
+                    $("#gameresults").html("Thanks for playing, your results are below: <br><br>Question 1: Correct <br><br>");
+
+                     } else if (button2.checked) {
+                    $("#gameresults").html("Thanks for playing, your results are below: <br><br>Question 1: Incorrect <br><br>");
+
+                }
+
+                   if (button3.checked){
+                    $("#gameresults2").html("Question 2: Incorrect<br><br>");
+
+                    } else if (button4.checked) {
+                    $("#gameresults2").html("Question 2: Correct<br><br>");
+
+                    } else if (button5.checked) {
+                    $("#gameresults2").html("Question 2: Incorrect<br><br>");
+
+                }
+
+                    if (button6.checked){
+                    $("#gameresults3").html("Question 3: Incorrect<br><br>");
+
+                    } else if (button7.checked) {
+                    $("#gameresults3").html("Question 3: Incorrect<br><br>");
+
+                    } else if (button8.checked) {
+                    $("#gameresults3").html("Question 3: Correct<br><br>");
+
+                }
+
+                    if (button9.checked){
+                    $("#gameresults4").html("Question 4: Correct<br><br>");
+
+                    } else if (button10.checked) {
+                    $("#gameresults4").html("Question 4: Incorrect<br><br>");
+
+                    } else if (button11.checked) {
+                    $("#gameresults4").html("Question 4: Incorrect<br><br>");
+
+                }
+
+            })
+
               // $("#newDiv").append("<h3>TRUE OR FALSE:</h3><p>73% of scientists have confirmed that an Aliens built the Pyramids?</h3></p> <form><input type=radio value=True> True  <input type=radio value=False> False</form>");
 
    //      }
@@ -161,7 +240,7 @@
          //  "<p>Guesses So Far: " +  "</p>"
 
 
-});
+
 
 });
 
