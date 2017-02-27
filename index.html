@@ -137,10 +137,10 @@
                 $("#display").hide();
 
                 if (button1.checked){
-                    $("#gameresults").html("Thanks for playing, your results are below: <br><br><strong>Question 1:</strong> Correct <br><br>");
+                    $("#gameresults").html("Sorry, you ran out of time, your results to the questions you answered are below: <br><br><strong>Question 1:</strong> Correct <br><br>");
 
                      } else if (button2.checked) {
-                    $("#gameresults").html("Thanks for playing, your results are below: <br><br><strong>Question 1:</strong> Incorrect <br><br>");
+                    $("#gameresults").html("Sorry, you ran out of time, your results to the questions you answered are below: <br><br><strong>Question 1:</strong> Incorrect <br><br>");
 
                 }
 
@@ -189,6 +189,7 @@
             }
 
 })
+             
              $("#submit").click (function(){
           
                 $("#gameText").hide();
